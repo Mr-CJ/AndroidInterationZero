@@ -5,7 +5,7 @@ import com.jian.zero.interation.base.BaseActivity;
 public class MainActivity extends BaseActivity {
     @Override
     public int getLayoutId() {
-        return 0;
+        return R.layout.activity_main;
     }
 
     @Override

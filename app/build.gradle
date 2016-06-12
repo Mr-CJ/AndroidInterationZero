@@ -1,20 +1,32 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion appTargetSDKVersion.toInteger()
+    buildToolsVersion appBuildToolVersion
 
     defaultConfig {
-        applicationId "com.jian.zero.interation.androidinterationzero"
-        minSdkVersion 17
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion appMinSDKVersion.toInteger()
+        targetSdkVersion appTargetSDKVersion.toInteger()
+        versionCode appVersionCode.toInteger()
+        versionName appSemanticVersion
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    productFlavors {
+        dev {
+            applicationId = "com.jian.zero.interation.androidinterationzero"
+        }
+        production {
+            applicationId = "com.jian.zero.interation.androidinterationzero"
+        }
+        qa {
+            applicationId = "com.jian.zero.interation.androidinterationzero"
         }
     }
 }
